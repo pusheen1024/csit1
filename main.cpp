@@ -2,13 +2,19 @@
 
 using namespace std;
 
-int fib(int n) {
-    if (n < 3) return n - 1;
-    return fib(n - 1) + fib(n - 2);
+void fib(int n) {
+    int f1 = 0;
+    int f2 = 1;
+    for (int i = 0; i < n; i++) {
+	cout << f1 << '\n';
+	int f = f2;
+	f2 = f1 + f2;
+	f1 = f;
+    }
 }
 
 int main() {
     int n;
     cin >> n;
-    cout << fib(n) << '\n';
+    fib(n);
 }
